@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="tvApp">
+<head>
+	<meta charset="utf-8">
+
+	<title>twitch tv</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="">
+	<meta name="description" content="A freecodecamp project for the award of frontend certificate.">
+	<link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="app/libs/angular.js"></script>
+	<script src="app\app.js"></script>
+
+</head>
+<body>
+	<header id="menu-bar">
+		<h1>twitch tv streamer</h1>
+		<ul>
+			<a href="#offline"><li>Offline</li></a>
+			<a href="#online"><li>Online</li></a>
+			<a href="#all"><li>All</li></a>
+		</ul>
+	</header>
+
+	<main class="content">
+		<div ng-controller="onlineController">
+			<ul id="online">
+				<li ng-repeat="channel in channels" ng-show="channel['stream'].display_name">
+					<span class="thumb"> <img ng-src="{{channel['stream'].logo}}"> </span>
+					<a ng-href="{{channel['stream'].url}}" target="_blank">{{channel['stream'].display_name}}</a>
+				</li>
+			</ul>
+
+		</div>
+
+		<div ng-controller="offlineController">
+			<ul id="offline">
+				<li ng-repeat="channel in corrects" ng-hide="{{channel['stream']}}">
+					<a ng-href="{{channel['_links'].channel}}" target="_blank">{{channel.display_name}}</a>
+				</li>
+			</ul>
+		</div>
+
+	</main>
+
+
+</body>
+</html>
