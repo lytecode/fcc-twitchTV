@@ -1,4 +1,25 @@
-const tvApp = angular.module('tvApp', []);
+const tvApp = angular.module('tvApp', ['ngRoute']);
+
+tvApp.config(['$routeProvider', function($routeProvider){
+  $routeProvider
+              .when('/online', {
+                templateUrl: 'views/online.html',
+                controller: 'onlineController'
+              })
+              .when('/offline', {
+                templateUrl: 'views/offline.html',
+                controller: 'offlineController'
+              })
+              .when('/all', {
+                templateUrl: 'views/all.html',
+                controller: 'onlineController',
+                controller: 'offlineController'
+              })
+              .otherwise({
+                redirectTo: '/all'
+              })
+}]);
+
 
 tvApp.controller('onlineController', ['$scope', function($scope){
  const channels = [

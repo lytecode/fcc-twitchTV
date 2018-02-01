@@ -1,0 +1,7 @@
+<div>
+  <ul id="offline">
+    <li ng-repeat="channel in corrects" ng-hide="{{channel['stream']}}">
+      <a ng-href="{{channel['_links'].channel}}" target="_blank">{{channel.display_name}}</a>
+    </li>
+  </ul>
+</div>

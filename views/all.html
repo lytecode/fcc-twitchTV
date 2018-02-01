@@ -1,0 +1,18 @@
+
+<div ng-controller="onlineController">
+  <ul id="online">
+    <li ng-repeat="channel in channels " ng-show="channel['stream'].display_name">
+      <span class="thumb"> <img ng-src="{{channel['stream'].logo}}"> </span>
+      <a ng-href="{{channel['stream'].url}}" target="_blank">{{channel['stream'].display_name}}</a>
+    </li>
+  </ul>
+
+</div>
+
+<div ng-controller="offlineController">
+  <ul id="offline">
+    <li ng-repeat="channel in corrects" ng-hide="{{channel['stream']}}">
+      <a ng-href="{{channel['_links'].channel}}" target="_blank">{{channel.display_name}}</a>
+    </li>
+  </ul>
+</div>

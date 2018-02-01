@@ -1,0 +1,9 @@
+<div>
+  <ul id="online">
+    <li ng-repeat="channel in channels " ng-show="channel['stream'].display_name">
+      <span class="thumb"> <img ng-src="{{channel['stream'].logo}}"> </span>
+      <a ng-href="{{channel['stream'].url}}" target="_blank">{{channel['stream'].display_name}}</a>
+    </li>
+  </ul>
+
+</div>

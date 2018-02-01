@@ -19,6 +19,7 @@ h1{
 	display: inline-block;
 	margin-left: 1px;
 	overflow: hidden;
+	margin: 0;
 }
 
 #menu-bar li{
